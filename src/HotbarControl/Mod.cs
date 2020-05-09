@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Text;
+﻿using System.Collections.Generic;
 using Harmony;
 
 namespace HotbarControl
@@ -14,7 +9,6 @@ namespace HotbarControl
 
         public Mod() 
         {
-            HarmonyInstance.DEBUG = true;
             _harmony = HarmonyInstance.Create("com.cisien.fc.hotbarcontrol");
             var originalAddToHotbarUshortUshort = AccessTools.Method(typeof(PlayerInventory), nameof(PlayerInventory.AddToHotbar), new[] { typeof(ushort), typeof(ushort) });
             var originalAddToHotbarInt = AccessTools.Method(typeof(PlayerInventory), nameof(PlayerInventory.AddToHotbar), new[] { typeof(int) });
