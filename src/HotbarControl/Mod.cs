@@ -28,7 +28,6 @@ namespace HotbarControl
 
         private static IEnumerable<CodeInstruction> NoOpPatch(IEnumerable<CodeInstruction> instructions)
         {
-            FileLog.Log("Patching AddToHotbarUshortUshort");
             yield break;
         }
 
